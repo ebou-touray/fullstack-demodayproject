@@ -6,12 +6,12 @@ const app = express();
 //Connect db
 connectDB();
 
-//Initialize Middleware, bodyParser
-app.use(express.json());
-
 app.get('/', (req, res) => {
   res.send('API running...');
 });
+
+//Initialize Middleware, bodyParser
+app.use(express.json());
 
 //Define All Routes
 app.use('/api/users', require('./routes/api/users'));
