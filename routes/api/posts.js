@@ -7,7 +7,7 @@ const Post = require('../../models/Post');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
-// @route  GET api/posts
+// @route  POST api/posts
 // @desc   Create post
 // @access Private
 router.post('/', [auth, [check('text', 'Text is required').not().isEmpty()]], async (req, res) => {
@@ -30,6 +30,19 @@ router.post('/', [auth, [check('text', 'Text is required').not().isEmpty()]], as
     const post = await newPost.save();
 
     res.json(post);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route  GET api/posts
+// @desc   Get all posts
+// @access Private
+router.get('/', auth, async (req, res) => {
+  try {
+    const posts = await Post.find().sort({ date: -1 });
+    res.json(posts);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
