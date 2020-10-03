@@ -7,9 +7,9 @@ const config = require('config');
 const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
 
-// @route  POST api/users
-// @desc   Test route
-// @access Public
+// @route    POST api/users
+// @desc     Register user
+// @access   Public
 router.post(
   '/',
   [check('name', 'Name is required').not().isEmpty(), check('email', 'Please use a valid email').isEmail(), check('password', 'Please enter password with 6 or more xters').isLength({ min: 6 })],
