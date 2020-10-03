@@ -5,6 +5,7 @@ import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 
+
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -97,7 +98,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(
-    mapStateToProps,
-    { setAlert, register }
-)(Register);
+export default connect( mapStateToProps,{ setAlert, register })(Register);
