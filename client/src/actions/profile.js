@@ -8,7 +8,11 @@ import {
   UPDATE_PROFILE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
+<<<<<<< HEAD
   GET_REPOS,
+=======
+  GET_REPOS
+>>>>>>> cb7ac48d59e8482f7accf0de6f1019cc7b6d389d
 } from "./types";
 
 // Get current users profile
@@ -30,7 +34,11 @@ export const getCurrentProfile = () => async (dispatch) => {
 
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
+<<<<<<< HEAD
   dispatch({ type: CLEAR_PROFILE });
+=======
+  dispatch({ type: CLEAR_PROFILE});
+>>>>>>> cb7ac48d59e8482f7accf0de6f1019cc7b6d389d
   try {
     const res = await axios.get("/api/profile");
 
@@ -47,7 +55,11 @@ export const getProfiles = () => async (dispatch) => {
 };
 
 // Get all profile by ID
+<<<<<<< HEAD
 export const getProfileById = (userId) => async (dispatch) => {
+=======
+export const getProfileById = userId => async (dispatch) => {
+>>>>>>> cb7ac48d59e8482f7accf0de6f1019cc7b6d389d
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
@@ -64,7 +76,11 @@ export const getProfileById = (userId) => async (dispatch) => {
 };
 
 // Get Gibhub repos
+<<<<<<< HEAD
 export const getGithubRepos = (username) => async (dispatch) => {
+=======
+export const getGithubRepos = username => async (dispatch) => {
+>>>>>>> cb7ac48d59e8482f7accf0de6f1019cc7b6d389d
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
 
